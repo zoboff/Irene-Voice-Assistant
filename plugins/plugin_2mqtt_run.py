@@ -1,4 +1,4 @@
-﻿# Command: "run" 
+# Command: "run" 
 # author: Andrey Zobov (inspired by janvarev)
 
 import random
@@ -22,8 +22,8 @@ def mqtt_connect(subscribe) -> object:
         client.connect(host=config.MQTT_BROKER)
         # start the loop 
         client.loop_start() 
-        #Subscribing to topic
-        client.subscribe(subscribe)
+        ##Subscribing to topic
+        # client.subscribe(subscribe)
         # Done        
         return client
     except Exception as e:
@@ -41,7 +41,7 @@ def start(core:VACore):
         "require_online": False, # требует ли онлайн?
 
         "commands": { # набор скиллов. Фразы скилла разделены | . Если найдены - вызывается функция
-            "работай|работать|работа": command2mqtt,
+            "работай|работать|работа": command2mqtt
         }
     }
     return manifest
